@@ -1,0 +1,31 @@
+{
+  "users": [
+    {
+      "id": "g0UY79_VK4FJF6hXn0quB",
+      "fullName": "Suraj verma",
+      "email": "sv6971525@gmail.com",
+      "skills": "react,javascript,css",
+      "bio": "Frontend dev"
+    },
+    {
+      "id": "use9Kad1c_vy78ctMf-km",
+      "fullName": "rachit",
+      "email": "john.doe@email.com",
+      "skills": "react,tailwind,css",
+      "bio": "frontend dev"
+    }
+  ],
+  "projects": [
+    {
+      "id": "jhflksflknsf",
+      "title": "DevConnect Website",
+      "description": "A social platform for developers to connect and share projects.",
+      "technologies": [
+        "React",
+        "Redux",
+        "Axios"
+      ],
+      "ownerId": "ksnfknssdmffm"
+    }
+  ]
+}
