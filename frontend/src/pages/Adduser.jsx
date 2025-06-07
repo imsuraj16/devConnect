@@ -2,9 +2,11 @@ import { nanoid } from "@reduxjs/toolkit";
 import { useForm } from "react-hook-form";
 import { addUser } from "../store/actions/userActions";
 import { useDispatch } from "react-redux";
-const Adduser = () => {
+import { useNavigate } from "react-router-dom";
 
-const dispatch = useDispatch();
+const Adduser = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const {
     register,
@@ -14,8 +16,10 @@ const dispatch = useDispatch();
   } = useForm();
 
   const addUserHandler = (userdata) => {
-    userdata.id = nanoid();
+    const userId = nanoid();
+    userdata.id = userId;
     dispatch(addUser(userdata));
+    navigate("/users");
     // console.log(userdata);
   };
 

@@ -5,20 +5,20 @@ import Loader from "../components/Loader";
 
 const Userspage = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.users);
-  // console.log(user);
-  
+  const users = useSelector((state) => state.user.users);
+  console.log(users);
 
   useEffect(() => {
     dispatch(fetchUser());
   }, []);
 
-  return user ? <div>
-
-    {user.map((u)=>(
-      <li key={u.id}>{u.fullName}</li>
-    ))}
-  </div> : <Loader/>
+  return users ?  (
+    <div>
+      {users.map((u) => (
+        <h1 key={u.id}>{u.fullName}</h1>
+      ))}
+    </div>
+  ) : <Loader/>
 };
 
 export default Userspage;

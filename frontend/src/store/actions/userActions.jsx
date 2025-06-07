@@ -1,5 +1,5 @@
 import axios from "../../api/apiconfig";
-import { loadUser, getUser } from "../reducers/userslice";
+import { getUser, loadUser } from "../reducers/userslice";
 
 export const addUser = (user) => async (dispatch, getState) => {
   try {

@@ -1,11 +1,25 @@
-import React from 'react'
+import React, { useEffect } from "react";
+import { fetchProjects } from "../store/actions/projectActions";
+import { useDispatch, useSelector } from "react-redux";
+import Loader from "../components/Loader";
 
 const Home = () => {
-  return (
-    <div>
-      
-    </div>
-  )
-}
+  // const dispatch = useDispatch();
+  // const project = useSelector((state) => state.project.projects);
+  // console.log(project);
 
-export default Home
+  // useEffect(() => {
+  //   dispatch(fetchProjects());
+  // }, []);
+
+  return
+  //  (
+  //   // <div>
+  //   //   {project.map((p) => (
+  //   //     <li key={p.id}>{p.projectTitle}</li>
+  //   //   ))}
+  //   // </div>
+  // ) 
+};
+
+export default Home;
