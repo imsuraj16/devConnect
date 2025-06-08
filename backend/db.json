@@ -1,34 +1,26 @@
 {
   "users": [
     {
-      "id": "OX9jaBxre5SEO4va7hmjr",
+      "id": "tD6-bXbUWOeZXRFOTPNGr",
       "fullName": "Suraj verma",
       "email": "sv6971525@gmail.com",
       "skills": "react,javascript,css",
       "bio": "ff"
     },
     {
-      "id": "n_nagogz5rwhuiZCGfJ8R",
+      "id": "9uylNY4vmAFln4iE2IkIg",
       "fullName": "diyanshu",
-      "email": "john.doe@email.com",
+      "email": "rahul.verma@example.com",
       "skills": "react,javascript,css",
-      "bio": "frontend"
-    }
-  ],
-  "projects": [
-    {
-      "id": "tXmZBE2-3WiCi97FpLYdj",
-      "title": "Devconnect",
-      "description": "social media ",
-      "technologies": "react,redux",
-      "ownerId": "OX9jaBxre5SEO4va7hmjr"
+      "bio": "bb"
     },
     {
-      "id": "bO_bn-mkgCUWVjJAFt4up",
-      "title": "recipe",
-      "description": "platform",
-      "technologies": "react,redux",
-      "ownerId": "n_nagogz5rwhuiZCGfJ8R"
+      "id": "_yI9TDbjThryPI70FkOl5",
+      "fullName": "rachit",
+      "email": "john.doe@email.com",
+      "skills": "react,javascript,tailwind",
+      "bio": "rr"
     }
-  ]
+  ],
+  "projects": []
 }

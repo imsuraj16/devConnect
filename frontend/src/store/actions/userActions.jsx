@@ -1,22 +1,23 @@
 import axios from "../../api/apiconfig";
-import { getUser, loadUser } from "../reducers/userslice";
+import { setUsers, setCurrentUserId } from "../reducers/userSlice";
 
-export const addUser = (user) => async (dispatch, getState) => {
+// Fetch all users from backend and update redux store
+export const fetchUsers = () => async (dispatch) => {
   try {
-    const res = await axios.post("/users", user);
-    dispatch(loadUser(res.data));
+    const res = await axios.get("/users");
+    dispatch(setUsers(res.data));
   } catch (error) {
-    console.log(error.message);
+    console.error("Fetch Users Error:", error.message);
   }
 };
 
-export const fetchUser = () => async (dispatch, getState) => {
+// Add a new user to backend and then update redux store globally by fetching all users again
+export const addUser = (user) => async (dispatch) => {
   try {
-    const res = await axios.get("/users");
-    // console.log(res);
-
-    dispatch(getUser(res.data));
+    const res = await axios.post("/users", user);
+    dispatch(setCurrentUserId(res.data.id)); // update current user id if needed
+    dispatch(fetchUsers()); // fetch fresh user list after adding new user
   } catch (error) {
-    console.log(error.message);
+    console.error("Add User Error:", error.message);
   }
 };
