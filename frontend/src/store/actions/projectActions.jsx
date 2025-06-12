@@ -1,11 +1,14 @@
 import axios from "../../api/apiconfig";
-import { getProject, loadProject } from "../reducers/projectSlice";
+import { loadProject } from "../reducers/projectSlice";
 
-export const addProject = (project) => async (dispatch, getState) => {
+
+
+export const fetchProjects = () => async (dispatch, getState) => {
 
     try {
-        const {data} = await axios.post("/projects",project)
+        const {data} = await axios.get("/projects")
         dispatch(loadProject(data))
+        
         
     } catch (error) {
         console.log(error);
@@ -14,13 +17,11 @@ export const addProject = (project) => async (dispatch, getState) => {
 };
 
 
-
-export const fetchProjects = () => async (dispatch, getState) => {
+export const addProject = (project) => async (dispatch, getState) => {
 
     try {
-        const {data} = await axios.get("/projects")
-        dispatch(getProject(data))
-        
+        const res = await axios.post("/projects",project)
+        dispatch(fetchProjects())
         
     } catch (error) {
         console.log(error);

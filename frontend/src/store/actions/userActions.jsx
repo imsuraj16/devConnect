@@ -15,6 +15,7 @@ export const fetchUsers = () => async (dispatch) => {
 export const addUser = (user) => async (dispatch) => {
   try {
     const res = await axios.post("/users", user);
+    
     dispatch(setCurrentUserId(res.data.id)); // update current user id if needed
     dispatch(fetchUsers()); // fetch fresh user list after adding new user
   } catch (error) {
