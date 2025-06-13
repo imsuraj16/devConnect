@@ -1,17 +1,21 @@
+import { Code } from 'lucide-react'
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Nav = () => {
   return (
-    <nav className='w-full bg-white shadow-sm border-b border-gray-100'>
+    <nav className='w-full bg-white shadow-sm border-b border-gray-100 py-2'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex items-center justify-between h-16'>
           {/* Logo/Brand */}
-          <div className='flex-shrink-0'>
-            <h1 className='text-xl font-bold text-gray-900'>
+           <NavLink to='/' className="flex items-center space-x-2">
+            <code className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <Code className="w-6 h-6 text-white" />
+            </code>
+            <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               DevConnect
-            </h1>
-          </div>
+            </span>
+          </NavLink>
           
           {/* Desktop Navigation */}
           <div className='hidden md:block'>

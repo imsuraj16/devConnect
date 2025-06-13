@@ -1,13 +1,16 @@
 import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { User, Mail, Award, FileText, Check, AlertCircle, Send, Sparkles, UserPlus } from "lucide-react"
-import { addUser } from "../store/actions/userActions"
+import { addUsers } from "../store/actions/userActions"
 import {useDispatch} from "react-redux"
+import { useNavigate } from "react-router-dom"
+import { nanoid } from "@reduxjs/toolkit"
 
-const SimpleUserForm = () => {
+const Adduser = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const {
     register,
@@ -19,7 +22,8 @@ const SimpleUserForm = () => {
 
   const addUserHandler = async (userdata) => {
     setIsSubmitting(true)
-    dispatch(addUser(userdata))
+    userdata.id = nanoid()
+    dispatch(addUsers(userdata))
 
     // Simulate API call delay
     await new Promise((resolve) => setTimeout(resolve, 1500))
@@ -32,8 +36,6 @@ const SimpleUserForm = () => {
         .filter((skill) => skill.length > 0)
         .join(", ")
     }
-
-    // console.log("User Data:", userdata)
     setSubmitSuccess(true)
 
     setTimeout(() => {
@@ -41,6 +43,8 @@ const SimpleUserForm = () => {
       reset()
       setIsSubmitting(false)
     }, 3000)
+
+    navigate('/users')
   }
 
   const watchedValues = watch()
@@ -60,11 +64,11 @@ const SimpleUserForm = () => {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 mb-6 shadow-lg border border-white/20">
             <UserPlus className="w-5 h-5 text-indigo-600" />
-            <span className="text-sm font-medium text-gray-700">New Team Member</span>
+            <span className="text-sm font-medium text-gray-700">New User</span>
           </div>
           
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 bg-clip-text text-transparent mb-4 animate-fade-in">
-            Add Team Member
+            Add User
           </h1>
           
           <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
@@ -94,7 +98,7 @@ const SimpleUserForm = () => {
                 </div>
               ) : (
                 // Form
-                <div className="space-y-8">
+                <form className="space-y-8">
                   {/* Full Name */}
                   <div className="group">
                     <label className="flex items-center gap-2 text-sm font-semibold text-gray-700 mb-3 group-hover:text-indigo-600 transition-colors duration-300">
@@ -246,7 +250,7 @@ const SimpleUserForm = () => {
                       )}
                     </button>
                   </div>
-                </div>
+                </form>
               )}
             </div>
 
@@ -322,4 +326,4 @@ const SimpleUserForm = () => {
   )
 }
 
-export default SimpleUserForm
+export default Adduser

@@ -12,7 +12,7 @@ export const fetchUsers = () => async (dispatch) => {
 };
 
 // Add a new user to backend and then update redux store globally by fetching all users again
-export const addUser = (user) => async (dispatch) => {
+export const addUsers = (user) => async (dispatch) => {
   try {
     const res = await axios.post("/users", user);
     
