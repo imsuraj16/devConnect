@@ -14,6 +14,19 @@
       "role": "Full Stack Developer",
       "skills": "react, tailwind, css",
       "bio": "frontend"
+    },
+    {
+      "id": "r9TY-om9fg1ZFl5c6LdjL",
+      "fullName": "diyanshu",
+      "email": "admin@gmail.com",
+      "role": "Backend Developer",
+      "skills": "react, javascript, css",
+      "location": "Remote",
+      "bio": "ddsvgsdvg fhasfuhsaf fnslkfhsla lknksf",
+      "phone": "",
+      "website": "",
+      "joinDate": "2025",
+      "rating": 4.657795874811847
     }
   ],
   "projects": [
@@ -44,6 +57,13 @@
       "description": "platform for open source ",
       "technologies": "react,redux,tailwind",
       "ownerId": "oB-0sQVJmFeV3aBNzLLMI"
+    },
+    {
+      "id": "Ipj1KIyeo0NEHW_9Xbtxs",
+      "title": "insta",
+      "description": "social platform",
+      "technologies": "react,redux,tailwind",
+      "ownerId": "CIcwcgXV2HNPBns2fNsx_"
     }
   ]
 }
