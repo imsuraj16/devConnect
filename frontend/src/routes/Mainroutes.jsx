@@ -6,11 +6,13 @@ import Addproject from "../pages/Addproject"
 import Adduser from "../pages/Adduser"
 import Projects from '../pages/Projects'
 import Userdetails from '../pages/Userdetails'
+import About from '../pages/About'
 
 const Mainroutes = () => {
   return (
     <Routes>
       <Route path='/' element = {<Home/>}/>
+      <Route path='/about' element = {<About/>}/>
       <Route path='/users' element = {<Userspage/>}/>
       <Route path='/projects' element = {<Projects/>}/>
       <Route path='/add-project' element = {<Addproject/>}/>
